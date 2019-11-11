@@ -42,6 +42,10 @@ function stack_meta_index.Pop(self, e)
     end
 end
 
+function stack_meta_index.Peek(self)
+    return self.a[#self.a]
+end
+
 stack_meta.__index = stack_meta_index -- we set the __index function to our index table so we can use the functions we just created
 
 Stack = {}

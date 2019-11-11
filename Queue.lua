@@ -42,6 +42,10 @@ function queue_meta_index.Dequeue(self, e)
     end
 end
 
+function queue_meta_index.Peek(self)
+    return self.a[1]
+end
+
 queue_meta.__index = queue_meta_index -- we set the __index function to our index table so we can use the functions we just created
 
 Queue = {}
