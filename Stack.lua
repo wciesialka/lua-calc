@@ -1,13 +1,13 @@
 local stack_meta = {}
 
 function stack_meta.New(self)
-    local stack = {} -- create queue
+    local stack = {} -- create stack
 
-    stack.a = {} -- create a table to use to store elements of the queue
+    stack.a = {} -- create a table to use to store elements of the stack
     
-    setmetatable( stack, stack_meta ) -- set the queue's metatable
+    setmetatable( stack, stack_meta ) -- set the stack's metatable
 
-    return stack -- return the queue
+    return stack -- return the stack
 end
 
 stack_meta.__call = stack_meta.New -- this lets us use the metatable like a constructor
