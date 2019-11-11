@@ -115,3 +115,36 @@ Modulo_Command = Operator(2,function(v1,v2)
         return v1%v2
     end
 end)
+
+-- value command
+
+local value_meta = {}
+
+function value_meta.New(self,stk,val)
+    local command = {}
+
+    if(stk == nil) then
+        stk = Stack()
+    end
+
+    command.stack = stk
+    command.value = val
+
+    setmetatable(command, value_meta)
+
+    return command
+end
+
+value_meta.__call = value_meta.New
+
+local value_index = {}
+
+function value_index.Execute(self)
+    self.stack:Push(self.value)
+end
+
+value_meta.__index = value_index
+
+Value = {}
+
+setmetatable(Value, value_meta)
