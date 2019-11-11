@@ -145,6 +145,6 @@ end
 
 value_meta.__index = value_index
 
-Value = {}
+Value_Command = {}
 
-setmetatable(Value, value_meta)
+setmetatable(Value_Command, value_meta)
