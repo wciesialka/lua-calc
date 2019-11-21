@@ -2,6 +2,7 @@
     "name": "lua-calc",
     "description": "Object Oriented Calculator in Lua",
     "version": "1.0.0",
+    "lua-version": "5.3.3",
     "main": "Main.lua",
     "repository": {
         "type": "git",
