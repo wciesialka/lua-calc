@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Project%20Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2F%3Auser%2F%3Arepo%2F%3Abranch%2F%3Afile.json)
+![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2F%3Auser%2F%3Arepo%2F%3Abranch%2Fpackage.json)
 
 # lua-calc
 Object Oriented Calculator in Lua

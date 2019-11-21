@@ -1,0 +1,17 @@
+{
+    "name": "lua-calc",
+    "description": "Object Oriented Calculator in Lua",
+    "version": "1.0.0",
+    "main": "Main.lua",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wciesialka/lua-calc/"
+    },
+    "keywords": [],
+    "author": "William Ciesialka",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/wciesialka/lua-calc/issues"
+    },
+    "homepage": "https://github.com/wciesialka/lua-calc/"
+}
