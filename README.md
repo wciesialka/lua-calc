@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&query=version&url=https://raw.githubusercontent.com/wciesialka/lua-calc/master/package.json) ![](https://img.shields.io/badge/dynamic/json?color=informational&label=Lua&query=lua-version&url=https://raw.githubusercontent.com/wciesialka/lua-calc/master/package.json)
+![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fwciesialka%2Flua-calc%2Fmaster%2Fpackage.json) ![](https://img.shields.io/badge/dynamic/json?color=informational&label=Lua%20Version&prefix=v&query=luaversion&url=https%3A%2F%2Fraw.githubusercontent.com%2Fwciesialka%2Flua-calc%2Fmaster%2Fpackage.json)
 
 # lua-calc
 Object Oriented Calculator in Lua
