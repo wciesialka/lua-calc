@@ -1,3 +1,3 @@
 #!/bin/bash
 
-lua Main.lua $*
+lua Main.lua "$*"

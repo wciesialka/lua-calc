@@ -11,7 +11,7 @@ Object Oriented Calculator in Lua
 
 ## Running
 
-You can either run the program by using `lua Main.lua [expression]` or `./run.sh [expression]`.
+You can either run the program by using `lua Main.lua "[expression]"` or `./run.sh "[expression]"`. Expressions must be space delimited and balanced. Note that the quotes are required!
 
 ## Authors
 
