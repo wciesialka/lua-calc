@@ -41,6 +41,10 @@ function factory_index.Create_Modulo(self)
     return Modulo_Command(self.stack)
 end
 
+function factory_index.Create_Exponent(self)
+    return Exponent_Command(self.stack)
+end
+
 function factory_index.Create_Value(self,v)
     return Value_Command(self.stack,v)
 end

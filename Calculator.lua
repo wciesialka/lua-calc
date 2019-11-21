@@ -45,6 +45,8 @@ function calculator_index.Tokens_To_Postfix(self, tokens)
             node = self.factory:Create_Divide()
         elseif token == "%" then
             node = self.factory:Create_Modulo()
+        elseif token == "^" then
+            node = self.factory:Create_Exponent()
         elseif token == "(" then
             self:Tokens_To_Postfix(tokens)
             goto next_iter -- we use this since Lua has no "continue" statement.

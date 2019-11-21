@@ -116,6 +116,10 @@ Modulo_Command = Operator(2,function(v1,v2)
     end
 end)
 
+Exponent_Command = Operator(3,function(v1,v2)
+    return v1 ^ v2
+end)
+
 -- value command
 
 local value_meta = {}
