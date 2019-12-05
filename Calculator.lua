@@ -62,7 +62,7 @@ function calculator_index.Tokens_To_Postfix(self, tokens)
             goto next_iter
         end
         
-        while (not (expression:Is_Empty()) and (expression:Peek().precedence >= node.precedence)) do
+        while (not (expression:Is_Empty()) and (expression:Peek().precedence >= node.precedence)) do -- this accounts for order of operations.
             self.postfix:Enqueue(expression:Pop())
         end
 
@@ -79,9 +79,12 @@ end
 function calculator_index.String_To_Postfix(self, str)
     local tokens = Queue()
 
-    for token in string.gmatch(str, "[^%s]+") do -- split by spaces using gmatch
+    -- "(\+|-|\*|\/|\^|%|\(|\)){1}"
+
+    for token in string.gmatch(str, "[%+,%-,%*,/,^,%%,%(,%),%d*%.?%d+]") do -- tokenize. pattern means any operational character or number with optional decimals
         tokens:Enqueue(token)
     end
+
 
     self:Tokens_To_Postfix(tokens)
 end

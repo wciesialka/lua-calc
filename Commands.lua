@@ -143,8 +143,8 @@ value_meta.__call = value_meta.New
 
 local value_index = {}
 
-function value_index.Execute(self)
-    self.stack:Push(self.value)
+function value_index.Execute(self) -- execute should just push itself onto the stack
+    self.stack:Push(self.value)    -- since it's just a number
 end
 
 value_meta.__index = value_index
