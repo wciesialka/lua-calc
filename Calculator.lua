@@ -76,15 +76,49 @@ function calculator_index.Tokens_To_Postfix(self, tokens)
     end
 end
 
-function calculator_index.String_To_Postfix(self, str)
-    local tokens = Queue()
-
-    -- "(\+|-|\*|\/|\^|%|\(|\)){1}"
-
-    for token in string.gmatch(str, "[%+,%-,%*,/,^,%%,%(,%),%d*%.?%d+]") do -- tokenize. pattern means any operational character or number with optional decimals
-        tokens:Enqueue(token)
+local function tokenize(input)
+    local ops = {}
+    for match in input:gmatch("[%+,%-,%*,/,^,%%,%(,%)]") do
+        table.insert( ops, #ops+1, match ) -- fill ops table with operators
+    end
+    local nums = {}
+    for match in input:gmatch("%d*%.?%d+") do
+        table.insert( nums, #nums+1, match ) -- fill nums table with numbers
     end
 
+    local tokens = Queue()
+
+    local lastindex = 0
+
+    while(#ops > 0 and #nums > 0) do -- while neither are empty...
+        local opindex = input:find(ops[1],lastindex) -- find the next occurance of first operator in list
+        local nmindex = input:find(nums[1],lastindex) -- find the next occurance of first number in list
+        if nmindex < opindex then -- if number comes first
+            lastindex = opindex -- search from next operator
+            tokens:Enqueue(nums[1]) -- enqueue number
+            table.remove( nums, 1 )
+        else
+            lastindex = nmindex -- else search from next number
+            tokens:Enqueue(ops[1])
+            table.remove( ops, 1 )
+        end
+    end
+
+    while(#ops > 0) do -- fill queue with anything remaining
+        tokens:Enqueue(ops[1])
+        table.remove(ops,1)
+    end
+
+    while(#nums > 0) do
+        tokens:Enqueue(nums[1])
+        table.remove(nums,1)
+    end
+    
+    return tokens
+end
+
+function calculator_index.String_To_Postfix(self, str)
+    local tokens = tokenize(str)
 
     self:Tokens_To_Postfix(tokens)
 end
