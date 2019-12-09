@@ -93,7 +93,7 @@ local function tokenize(input)
     while(#ops > 0 and #nums > 0) do -- while neither are empty...
         local opindex = input:find(ops[1],lastindex,true) -- find the next occurance of first operator in list
         local nmindex = input:find(nums[1],lastindex,true) -- find the next occurance of first number in list
-        if nmindex < opindex then -- if number comes first
+        if opindex == nil or nmindex < opindex then -- if number comes first
             lastindex = opindex -- search from next operator
             tokens:Enqueue(nums[1]) -- enqueue number
             table.remove( nums, 1 )
