@@ -15,7 +15,7 @@ You can either run the program by using `lua Main.lua "[expression]"` or `./run.
 
 ## Authors
 
-* William Ciesialka
+* Willow Ciesialka
 
 ## License
 
